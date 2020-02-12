@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import xyz.lurkin.grades.databinding.FragmentAddStudentBinding
 import xyz.lurkin.grades.databinding.FragmentTitleBinding
 
@@ -34,6 +35,8 @@ class AddStudentFragment : Fragment() {
             binding.matricule.text.clear()
             binding.firstname.text.clear()
             binding.lastname.text.clear()
+            it.findNavController().popBackStack()
+
 
         }
 

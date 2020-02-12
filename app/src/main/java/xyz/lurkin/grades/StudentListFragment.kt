@@ -34,6 +34,7 @@ class StudentListFragment : Fragment() {
             adapter.students = it
         })
 
+
         binding.toAddStudent.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_studentListFragment_to_addStudentFragment))
 
         return binding.root

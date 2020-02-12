@@ -43,4 +43,10 @@ class StudentListViewModel : ViewModel() {
             .addOnSuccessListener { Log.d("StudentListViewModel", "Student successfully written!") }
             .addOnFailureListener { e -> Log.w("StudentListViewModel", "Error writing document", e) }
     }
+
+    fun deleteStudent(matricule: String) {
+        db.collection("students").document(matricule).delete()
+            .addOnSuccessListener { Log.d("StudentListViewModel", "DocumentSnapshot successfully deleted!") }
+            .addOnFailureListener { e -> Log.w("StudentListViewModel", "Error deleting document", e) }
+    }
 }
