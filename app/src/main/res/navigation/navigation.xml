@@ -18,5 +18,14 @@
         android:id="@+id/studentListFragment"
         android:name="xyz.lurkin.grades.StudentListFragment"
         android:label="StudentListFragment"
-        tools:layout="@layout/fragment_student_list"/>
+        tools:layout="@layout/fragment_student_list">
+        <action
+            android:id="@+id/action_studentListFragment_to_addStudentFragment"
+            app:destination="@id/addStudentFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/addStudentFragment2"
+        android:name="xyz.lurkin.grades.AddStudentFragment"
+        android:label="fragment_add_student"
+        tools:layout="@layout/fragment_add_student" />
 </navigation>

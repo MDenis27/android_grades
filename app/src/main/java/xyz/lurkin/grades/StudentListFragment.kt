@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
@@ -18,7 +19,7 @@ import xyz.lurkin.grades.databinding.FragmentStudentListBinding
  */
 class StudentListFragment : Fragment() {
 
-    private val viewModel: StudentListViewModel by viewModels()
+    private val viewModel: StudentListViewModel by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -33,7 +34,7 @@ class StudentListFragment : Fragment() {
             adapter.students = it
         })
 
-        binding.toAddStudent.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_studentListFragment))
+        binding.toAddStudent.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_studentListFragment_to_addStudentFragment))
 
         return binding.root
     }

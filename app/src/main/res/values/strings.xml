@@ -7,4 +7,5 @@
     <string name="hello_student_list_fragment">Hello Student List fragment</string>
     <string name="students">Students</string>
     <string name="add_students">Add Students</string>
+    <string name="delete_students">Delete</string>
 </resources>

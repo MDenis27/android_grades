@@ -36,4 +36,11 @@ class StudentListViewModel : ViewModel() {
         super.onCleared()
         Log.i("StudentListViewModel", "StudentListViewModel Destroyed!")
     }
+
+    fun addStudent(matricule: String, firstname: String, lastname: String) {
+        val data = hashMapOf("firstname" to firstname, "lastname" to lastname)
+        db.collection("students").document(matricule).set(data)
+            .addOnSuccessListener { Log.d("StudentListViewModel", "Student successfully written!") }
+            .addOnFailureListener { e -> Log.w("StudentListViewModel", "Error writing document", e) }
+    }
 }
