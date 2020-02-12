@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.Navigation
 import xyz.lurkin.grades.databinding.FragmentStudentListBinding
 
 /**
@@ -31,6 +32,8 @@ class StudentListFragment : Fragment() {
         viewModel.students.observe(viewLifecycleOwner, Observer {
             adapter.students = it
         })
+
+        binding.toAddStudent.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_studentListFragment))
 
         return binding.root
     }
