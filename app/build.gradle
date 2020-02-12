@@ -8,7 +8,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
     defaultConfig {
-        applicationId "xyz.lurkin.grades"
+        applicationId "be.ecam.m15089.grades"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
