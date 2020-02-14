@@ -12,6 +12,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
+import kotlinx.android.synthetic.main.student_list_item.*
 import xyz.lurkin.grades.databinding.FragmentStudentListBinding
 
 /**
@@ -27,13 +28,12 @@ class StudentListFragment : Fragment() {
 
         Log.i("StudentListFragment", "StudentListFragment Created!")
 
-        val adapter = StudentListAdapter()
+        val adapter = StudentListAdapter(viewModel)
         binding.studentList.adapter = adapter
 
         viewModel.students.observe(viewLifecycleOwner, Observer {
             adapter.students = it
         })
-
 
         binding.toAddStudent.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_studentListFragment_to_addStudentFragment))
 
